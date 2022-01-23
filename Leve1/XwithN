@@ -1,0 +1,22 @@
+package Level1;
+import java.util.*;
+
+public class XwithN {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int x = scan.nextInt();
+		int n = scan.nextInt();
+		long[] a = solution(x,n);
+		for (int i=0; i<n; i++) {
+			System.out.print(a[i]);
+		}
+		
+	}
+	public static long[] solution(int x, int n) {
+		long[] answer = new long[Math.abs(x*n)];
+		for (int i=0; i<n; i++) {
+			answer[i] = x*(i+1);
+		}
+		return answer;
+	}
+}
