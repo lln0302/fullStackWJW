@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   /*구조선택자
+      2n : 짝수번쨰 객체, 2n+1:홀수번쨰 객체, 3n : 3의 배수번째 객체...
+      :nth-child()
+   */
+   #Lst>li:nth-child(2n){
+      background:pink; 
+   }
+   #Lst>li:first-child{
+      color:orange;
+   }
+   #Lst>li:Last-child{
+      color:blue; font-size:1.2em;
+   }
+   body{margin:30px;}
+   /*그림자 설정*/
+   #Lst>li{
+      font-size:1.2em; margin-bottom:30px; border:1px solid #bbb;
+   }
+   /*박스 또는 글자에 그림자 표시*/
+   #Lst>li{
+      /*         오른쪽   아래쪽  투명   색상 (반대는 음수처리 -10px)*/
+      box-shadow:10px   5px   5px   red;
+   }
+   #Lst>li{
+      text-shadow:5px 5px 5px green;
+   }
+   #txt{
+      /*Permalink - use to edit and share this gradient: https://colorzilla.com*/
+   }
+</style>
+</head>
+<!-- 
+   html속성
+   oncontextmenu : 마우스 오른쪽버튼 사용제어
+   onselectstart : 선택시작 불가능
+   ondragstart : 드래그 시작 불가능
+ -->
+<body oncontextmenu="return false" onselectstart="return false">
+<ul id="Lst">
+   <li>맨드라미</li>
+   <li>장미</li>
+   <li>코스모스</li>
+   <li>민들레</li>
+   <li>해바라기</li>
+   <li>히야신스</li>
+</ul>
+<style>
+   /*구조선택자
+      first-of-type : 처음 객체
+      last-of-type : 마지막 객체
+      nth-of-type() : 2n, 2n+1
+   */
+   #Lst2>li:nth-of-type(2n){background:yellow;}
+   #Lst2>li:nth-of-type(2n+1){background:orange;}
+   #Lst2>li:first-of-type{font-size:2em;}
+   #Lst2>li:last-of-type{color:green;}
+</style>
+<ul id="Lst2">
+   <li>맨드라미</li>
+   <li>장미</li>
+   <li>코스모스</li>
+   <li>민들레</li>
+   <li>해바라기</li>
+   <li>히야신스</li>
+</ul>
+<style>
+   /*텍스트 스타일
+      ::first-letter -> 문단의 첫번째 문자에 스타일 적용
+      ::first-line -> 첫번째 줄에 적용하는 스타일
+      ::selection -> 선택한 문자의 스타일
+   */
+   #txt::first-letter{
+      font-size:2em; background:pink; font-weight:bold; color:red;
+   }
+   #txt::first-line{
+      text-decoration:underline;
+   }
+   #txt::selection{
+      color:red; background:#000;
+   }
+</style>
+<div id="txt">
+경기 내에서 해당 픽의 활약은 돋보이진 않았다. 하지만 C9의 핵심 캐리라고 할 수 있는 원거리 딜러 '버서커' 김민철에게 힘을 확실히 실어주는 픽이었다. '버서커'는 2021 LCK CL 스프링 T1의 우승에 크게 기여한 선수로 LCS 첫 주차에서도 엄청난 존재감을 발휘했다. 아펠리오스로 먼저 상대 체력을 깎고 시작하거나 아군이 모두 쓰러지는 한타에서 후진입해 트리플 킬을 쓸어담는 뛰어난 능력을 선보였다. 소라카와 아이번은 '버서커'를 보좌하기 위해 뽑은 이유가 가장 큰 것처럼 보인다.
+</div>
+</body>
+</html>
