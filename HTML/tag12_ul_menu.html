@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   ul, li, body{
+      margin:0; padding:0;
+   }
+   /* ' ' : menu의 후손 li
+       >  : menu의 자손 li
+   */
+   
+   #menu{
+      background-color:yellow;
+      overflow:auto; /*컨텐츠만큼 공간 확보*/
+      list-style-type:none;
+   }
+   
+   #menu>li{
+      background-color:pink;   
+      float:left;  
+      
+      width:25%;   height:50px;
+      
+      text-align:center; /*left, right, center*/ 
+      line-height:50px;
+      font-size:30px; /*px, pt, %, mm, cm, in, em,...*/
+      /*fonts.google.com*/
+      font-family:궁서체,돋움체,굴림체;  
+   }
+   
+   /* 
+    가상클래스
+    link: 링크, hover: 마우스오버, visited:방문시, active:누른상태
+    text-decoration -> underline, overline, line-through(취소선), none
+   */
+   
+   #menu a:link, #menu a:visited{
+      text-decoration:none; color:gray; 
+   }
+   
+   #menu a:hover{
+      text-decoration:underline; color:red; font-weight:bold;    
+   }   
+   
+</style>
+</head>
+<body>
+<ul ID="menu">
+   <li style="background:yellow"><a href="#">TV</a></li>
+   <li><a href="#">여행/맛집</a></li>
+   <li><a href="#">푸드</a></li>
+   <li><a href="#">만화/웹툰</a></li>
+</ul>
+
+<style>
+    img{
+       border:5px solid red;
+    }
+</style>
+<img src="../img/06.png"/>
+</body>
+</html>

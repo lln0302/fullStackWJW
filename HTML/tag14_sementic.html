@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<!-- sementic태그
+     header : 페이지 상단
+     nav : 링크 걸린곳
+     section : 본문
+     article : 글 내용
+     aside : 사이드 메뉴
+     footer : 페이지 하단
+ -->
+ <style>
+    /*초기화*/
+    boby, ul, li{margin:0; padding:0; list-style-type:none;}
+    header{
+       height:50px; background:pink;
+    }
+    header>nav>ul>li{
+       float:left; height:50px; width:50%; line-height:50px; text-align:center;
+    }
+    /*컨텐츠*/
+    body>section{width:1200px; marigin:0 auto; overflow:auto;}
+    body>section>*{float:left;}
+    aside{
+       width:200px;
+       background-color:gray;
+    }
+    .content{
+       width:1000px;
+    }
+    /*풋터*/
+    footer{
+       height:30px; background:green;
+    }
+ </style>
+</head>
+<body>
+<header>
+   <nav>
+      <ul>
+         <li><a href="#">메뉴1</a></li>
+         <li><a href="#">메뉴2</a></li>         
+      </ul>
+   </nav>
+</header>
+<section>
+   <aside>
+      <nav>
+         <ul>
+            <li><a href="">aaaa</a></li>
+            <li>bbbb</li>
+            <li>cccc</li>         
+         </ul>
+      </nav>      
+   </aside>
+   <section class="content">
+      <h1>sementic tag</h1>
+      <article>글 내용</article>
+      <img src="../img/06.png"/>
+   </section>
+</section>
+<footer>
+   <nav>고객센터</nav>
+</footer>
+</body>
+</html>
