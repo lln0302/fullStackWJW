@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function htmlCtr(){
+	   
+	   //document.getElementById("i").src="../img/football.jpg";
+	   //document.getElementById("i").style.border="3px solid red";
+	   //document.getElementById("i").title="이미지에 마우스 오버중";
+	   
+	   var obj = document.getElementById("i");
+	   obj.src="../img/자연3.jpg";
+	   obj.style.border="5px solid blue";
+	   obj.title="풍선도움말";
+   }
+   function imgChange(){
+	   document.querySelector("#i").src="../img/06.png";
+   }
+</script>
+</head>
+<body>
+<img src="../img/06.png" id="i" onmouseover="htmlCtr()" onmouseout="imgChange()"/>
+</body>
+</html>

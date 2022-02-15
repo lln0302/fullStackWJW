@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   document.title="자바스크립트 제목";
+   document.write("body에 출력할 문자를 표시한다.")
+   // 한줄주석
+   /*
+    여러줄 주석
+   */
+   //자바스크립트에서 태그 사용하기
+   document.write('<h1 id="txt">자바스크립트에서 태그사용</h1>');
+   document.write("<h1>자바스크립트에서 태그사용</h1>");
+   for(var i=1;i<4;i++){
+   document.write("<img src='../img/자연"+i+".jpg'/>");
+   }
+</script>
+</head>
+<body>
+<h1 id="heading1">HTML영역</h1>
+<h2 id="heading2">HTML영역</h2>
+<script>
+   document.write("자바스크립트 실행됨.")
+   
+   //HTML의 아이디 heading1에 스타일을 적용한다.
+   document.getElementById("heading1").style.backgroundColor = "pink";
+   document.getElementById("txt").style.border="2px solid red";
+   
+   document.querySelector("#heading2").style.backgroundImage="url(../img/06.png)";
+</script>
+</body>
+</html>
