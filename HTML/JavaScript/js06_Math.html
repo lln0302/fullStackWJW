@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function mathTest(){
+	   var r = "";
+	   r += "PI : "+Math.PI+"<br/>";
+	   r += "pow : "+Math.pow(5,3)+"<br/>";
+	   r += "round :"+Math.round(2536.254)+"<br/>";
+	   r += "sqrt : "+Math.sqrt(10)+"<br/>";
+	   r += "abs : "+Math.abs(-52)+"<br/>";
+	   r += "floor: "+Math.floor(56.95)+"<br/>";
+	   r += "max: "+Math.max(589,2,4,236,234)+"<br/>";
+	   r += "min: "+Math.max(589,2,4,236,234)+"<br/>";
+	   r += "random :"+Math.random()+"<br/>";
+	   
+	   document.getElementById("result").innerHTML = r;
+   }
+</script>
+</head>
+<body onload="mathTest()">
+<div id="result"></div>
+</body>
+</html>
