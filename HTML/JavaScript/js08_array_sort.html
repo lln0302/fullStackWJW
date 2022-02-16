@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function arraysortTest(){
+	   var num = [58.93,02,957,28,945,204,45,34567,4679,3457,3578379,34];//숫자
+	   var str = ['orange','apple','banana','strawberry', 'pineapple','mango','peach','melon'];//문자
+	   
+	   //Ascending
+	   //문자에 대한 오름차순 정렬
+	   str.sort();
+	   document.getElementById("strAsc").innerHTML = "strAscending->"+str;
+	   //숫자에 대한 오름차순 정렬
+	   num.sort(function(x,y){return x-y}); //음수면 y가 크다, 양수면 x가 크다, 0이면 같다.
+	   document.querySelector("#numAsc").innerHTML = "numAscending->"+num;
+	   //Descending
+	   //문자에 대한 내림차순 정렬
+	   str.reverse();
+	   document.querySelector("#strDesc").innerHTML = "strDescending->"+str;
+	   //숫자엗 대한 내림차순 정렬
+	   num.sort(function(x,y){return y-x}); //음수가 x가 크다, 양수면 y가 크다.
+	   document.getElementById("numDesc").innerHTML = "numDescending->"+num;
+   }
+</script>
+</head>
+<body onload="arraysortTest();">
+<div id="strAsc"></div>
+<div id="numAsc"></div>
+<div id="strDesc"></div>
+<div id="numDesc"></div>
+</body>
+</html>
