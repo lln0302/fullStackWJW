@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+    이벤트 종류
+    onclick
+    
+    onmouseover : 하위 객체도 각각 오버 이벤트 발생
+    onmouseenter : x
+    
+    onmouseout 
+    onmouseleave : 하위 객체에 영향 x
+    
+    onmousedown : 마우스를 누른 상태
+    onmouseup : 누른 후 놓으면
+    onmousemove : 움직일때
+    
+    onfocus : 객체에 요소가 들어오면
+    onblur : 나가면
+    
+    onsubmit : form에서 submit이 발생되면 <intput type="submit"><button><input type="image">
+    onreset : form에서 reset이 발생하면
+    
+    onkeydown : 키를 누른 상태
+    onkeypress : 키를 누른 상태
+    onkeyup : 누른 후 놓으면
+    
+    onchange : value의 값이 바뀌면 발생
+    
+    onresize : 컨테이너 크기 변하면
+    
+    onload : 로딩이 완료되면 호출되는 이벤트
+ */
+ 
+</script>
+<style>
+   #d1{
+      height:200px; padding:30px; background: pink;     
+   }
+   #d2{
+      height:100px; padding:20px; background: yellow;
+   }
+   #d3{
+       background: lightblue;
+   }
+</style>
+<script>
+   var cnt=0;
+   function eventTest(){
+	   document.getElementById("h1").innerHTML = "마우스오버("+ cnt++ +")";
+   }
+   
+   function changeBack(){
+	   document.getElementById("id").style.background="orange";
+   }
+   function test(i){
+	   i.style.background="green";	   
+   }   
+   function resetTest(){
+	   document.getElementById("r").value = "리셋 이벤트 발생";
+   }
+   function telNumberCheck(){
+	   //event 내장 객체에 현재 누른 키의 키값을 가지고 있다.
+	   //event.key : 누른 키의 키값
+	   //event.returnValue : true, false
+	   //48~57
+	   console.log(event.keyCode);
+	   if(event.keyCode>=48 && event.keyCode<=57 || event.keyCode==8){//숫자
+		   event.returnValue = true;
+	   }else{//숫자 이외의 키
+		   event.returnValue = false;
+	   }
+   }
+</script>
+</head>
+<body onresize="console.log('resize...')">
+<form onsubmit="" onreset="resetTest()">
+   아이디 : <input type="text" name="id" id="id" onfocus="changeBack()" onblur="this.style.background='yellow'"><br/> 
+   이름 : <input type="text" name="name" id="name" onblur="test(this)"/><br/>
+   연락처 : <input type="text" name="tel" id="tel" onkeydown="telNumbercheck()"/><br/>
+   <select onchange="console.log('select')">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+   </select>
+   <input type="reset" id="r" value="다시쓰기"/>
+</form>
+<div id="d1" onmouseenter="eventTest()" onmouseleave="console.log('mouseleave 이벤트 발생')">
+   <div id="d2">
+      <h1 id="d3">마우스 오버</h1>
+   </div>
+</div>
+<img src="../img.1.png" onmouseenter="this.src='../img/06.png'" onmouseleave="this.src='../img/1.png'">
+</body>
+</html>
