@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   body{
+      background-image:url(../img/2.jpg);
+      background-size:100% 400px;      
+   }
+</style>
+<script>
+   function setPopCookie(){
+	   //체크박스가 체크 상태일떄 쿠키를 저장
+	   if(document.getElementById("cookieCheck").checked){
+		   //변수=값;path=/;expires=날짜;
+		   
+		   var now = new Date();
+		   now.setDate(now.getDate()+7);
+		   var cookieData = "popup=yes;path=/;expires="+now+";";
+		   console.log(cookieData);
+		   document.cookie = cookieData;		   
+	   }
+	   self.close(); //window.close();
+   }
+</script>
+</head>
+<body>
+<input type="checkbox" name="cookieCheck" id="cookieCheck"/> 일주일동안 안보이기
+<input type="button" value="Close" onclick="setPopCookie()"/>
+</body>
+</html>
