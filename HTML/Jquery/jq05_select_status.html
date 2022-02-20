@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   $(function(){
+	  //상태선택자
+	  
+	  //속성값이 text인 객체를 선택
+	  $(":text").css("width", "300px").css("height", "40px");
+	  
+	  //checked 속성에 대한 선택자 - checked속성이 설정되어 있을때 해제
+	  $(":checked").attr("checked", false);
+	  //$(":checked").prop("checked", true);
+	  
+	  $(":selected").attr("selected", false);
+	  
+	  //-----------------------------
+	  //컨텐츠 선택자
+	  //contains() : 특정문자를 포함한 경우 선택
+	  $("p:contains('1군으로')").css("background-color", "pink");
+	  
+	  //has() : 특정 태그를 포함한 경우 선택
+	  $("p:has('b')").css('border', '2px solid red');
+	  
+	  //not() : 특정 선택자를 제외한 나머지 선택
+	  $("p:not(:first)").css("color", "green");
+	  
+	  //closest() : 조상선택자
+	  $("i").closest("body").css("border", "3px dotted green");
+	  
+	  //filter
+	  $("p").filter('.c1').css("color", "#fff").css("background", "#000");
+	  
+	  //contents() : 특정 선택자의 하위가 다른 태그가 포함된 경우 하위 태그 선택
+	  $("p").contents().css("color", "red");
+	  
+   });
+</script>
+</head>
+<body>
+<div>
+  <p>농심은 14일 SNS을 통해 <b>1군으로</b> 올라와서 좋은 모습을 보여주던 '피터' 정윤수를 챌린저스 리그 팀으로 내리고 긴급 콜업으로 올라온 '바이탈' 하인성을 로스터에 넣는다고 발표했다.</p>
+  <p class="c1">최근 코로나19 확진자가 나온 농심은 현재 4연패를 당해 6위(3승 5패)로 내려온 상태다. 젠지e스포츠와의 1라운드 마지막 경기를 앞둔 농심은 팀 내 오더를 담당하고 있는 '고스트' 장용준을 중심으로 돌아가는 팀 스타일을 정착시키기 위함으로 보인다.</p>
+  <p class="c1">농심은 14일 SNS을 통해 <i>1군으로</i> 올라와서 좋은 모습을 보여주던 '피터' 정윤수를 챌린저스 리그 팀으로 내리고 긴급 콜업으로 올라온 '바이탈' 하인성을 로스터에 넣는다고 발표했다.</p>
+</div>
+<div>
+   <form>
+      <label>이름</label>
+      <input type="text" name="username" id="username"/><br/>
+      <label>연락처</label>
+      <input type="text" name="tel" id="tel"/><br/>
+      <label>사용자 동의 여부</label>
+      <input type="radio" name="accept" value="yes" checked> 동의
+      <input type="radio" name="accept" value="no"> 비동의<br/>
+      <label>자주가는 사이트</label>
+      <select name="site" id="site">
+         <option value="not">==직접선택==</option>
+         <option value="daum" selected>daum.net</option>
+         <option value="nate">nate.com</option>
+         <option value="naver">naver.com</option> 
+      </select>
+   </form>
+</div>
+</body>
+</html>
