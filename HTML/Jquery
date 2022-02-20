@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   var num = 100;
+   function jsView(){
+	   document.getElementById("test").innerHTML = "자바스크립트 함수에서 실행됨.";
+   }
+   //jquery는 자바스크립트 이벤트기반 라이브러리이다.
+   //현재 페이지가 로딩 완료되면 ready 이벤트가 발생하고 ready 이벤트 발생시 처리할 함수를 생성해준다.
+   //document가 선택자이다.
+   $(document).ready(function(){
+	   //jquery영역
+	   $("#test2").html("jquery로 구현된 위치")
+   });
+   
+</script>
+</head>
+<body onload="jsView()">
+<div id="test"></div>
+<div id="test2"></div>
+</body>
+
+</html>
