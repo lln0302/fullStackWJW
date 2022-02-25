@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   
+</style>
+<script>
+   $(function(){
+	   $("#hide").click(function(){
+		  // 사라지는 시간 : slow, fast, normal, 밀리초
+		   $("#i").hide(5000); //폭, 높이, 점점흐리게 
+	   });
+	   $("#show").click(function(){
+		  $("#i").show("slow"); 
+	   });
+	   $("#toggle").click(function(){
+		  $("#i").toggle(3000); 
+	   });
+	   // fadeIn(), fadeOut(), fadeToggle;
+	   // slideUp(), slideDown(), slideToggle();
+	   $("#fadeIn").click(function(){
+		   $("#i").fadeIn(3000);
+	   });
+	   $("#fadeOut").click(function(){
+		   $("#i").fadeOut(3000);
+	   });
+	   $("#fadeToggle").click(function(){
+		   $("#i").fadeToggle(3000);
+	   });
+	   $("#slideUp").click(function(){
+		   $("#i").slideUp(3000);
+	   });
+	   $("#slideDown").click(function(){
+		   $("#i").slideDown(3000);
+	   });
+	   $("#slideToggle").click(function(){
+		   $("#i").slideToggle(3000);
+	   });
+   });
+</script>
+</head>
+<body>
+<div>
+   <button id="hide">숨기기(hidden)</button>
+   <button id="show">보여주기(show)</button>
+   <button id="toggle">토글(toggle)</button>
+   <button id="fadeIn">보여주기(fadeIn)</button>
+   <button id="fadeOut">숨기기(fadeOut)</button>
+   <button id="fadeToggle">토글()</button>
+   <button id="slideUp">숨기기(slideUp)</button>
+   <button id="slideDown">보여주기(slideDown)</button>
+   <button id="slideToggle">토글()</button>
+   <hr/>
+   <img src="../img/2.jpg" id="i"/><br/>
+   <img src="../img/3.jpg"/>
+</div>
+</body>
+</html>
