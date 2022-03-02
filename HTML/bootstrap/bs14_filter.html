@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=devie-width, initial-sale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<script>
+	$(function(){
+		// search가 keyup 이벤트가 발생하면 테이블에서 검색어 있는 줄만 보여줌.
+		$("#search").keyup(function(){
+			var value = $(this).val().toLowerCase();
+			$("#searchList>tr").filter(function(){
+				var idx = $(this).text().toLowerCase().indexOf(value);
+				$(this).toggle(idx>-1);
+			});
+		});		
+	});
+</script>
+</head>
+<body>
+<div class="container">
+	<h1>Filter</h1>
+	<input type="text" id="search" placeholder="Search..." class="form-control"/>
+	<hr/>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<td>번호</td>
+			<td>이름</td>
+			<td>연락처</td>
+			<td>이메일</td>
+		</tr>
+		</thead>
+		<tbody id="searchList">		
+		<tr>
+			<td>1</td>
+			<td>박찬호</td>
+			<td>010-1234-5678</td>
+			<td>park@naver.com</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>박세리</td>
+			<td>010-2345-6789</td>
+			<td>seri@daum.net</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>박지성</td>
+			<td>010-1313-1313</td>
+			<td>jspark@manu.com</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>김연아</td>
+			<td>010-2323-7878</td>
+			<td>yuna@nate.com</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>정현</td>
+			<td>010-5467-8901</td>
+			<td>jh@naver.com</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>뽀로로</td>
+			<td>010-6767-1012</td>
+			<td>pororo@edu.com</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>손흥민</td>
+			<td>010-8767-2356</td>
+			<td>son@nate.com</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>팀킴</td>
+			<td>010-7859-3657</td>
+			<td>teamkim@naver.com</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>김연경</td>
+			<td>010-1818-1818</td>
+			<td>ykkim@1818.com</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>윤성빈</td>
+			<td>010-9583-8173</td>
+			<td>ironman@naver.com</td>
+		</tr>
+		</tbody>
+	</table>	
+</div>
+</body>
+</html>
