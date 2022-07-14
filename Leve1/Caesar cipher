@@ -1,0 +1,25 @@
+class Solution {
+    public String solution(String s, int n) {
+        String answer = "";
+        char[] tsc = s.toCharArray();
+        int asc;
+        for(int i=0; i<s.length();i++){
+            asc = tsc[i];
+            if (asc <= 90 && asc+n >90){
+                asc = asc+n-26;
+            }
+            else if(asc+n > 122){
+                asc = asc+n-26;
+            }
+            else if(asc == 32){
+                asc = 32;
+            }
+            else {
+                asc = asc+n;
+            }
+            tsc[i] = (char)asc;
+            answer += Character.toString(tsc[i]);
+        }
+        return answer;
+    }
+}
