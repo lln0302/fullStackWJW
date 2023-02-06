@@ -1,0 +1,24 @@
+//1. 중복 숫자 체크
+//2. 고를 수 있는 숫자와 중복을 제외한 일련번호의 숫자 비교
+//3-1. 고 > 일 => 일
+//3-2. 고 < 일 => 고
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        int pick = nums.length/2;
+        
+        HashSet<Integer> num = new HashSet<>();
+        for (int n : nums) {
+            num.add(n);
+        }
+        
+        if (pick >= num.size())
+            answer = num.size();
+        else 
+            answer = pick;
+        return answer;
+    }
+}
