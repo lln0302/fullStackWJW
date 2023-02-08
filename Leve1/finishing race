@@ -1,0 +1,31 @@
+//1. 참여 인원 hash 추가
+//2. 참여, 완주 인원 비교 후 삭제
+//2-1. 중복 시 해시코드 비교
+//3. 미완주 선수 출력
+
+import java.util.*;
+
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        
+        Map<String, Integer> player = new HashMap<>();
+        
+        for (String p : participant) {
+            player.put(p, player.getOrDefault(p, 0)+1);
+        }
+        
+        for (String c : completion) {
+            player.put(c, player.get(c)-1);
+        }
+        
+        for (String num : player.keySet()) {
+            if(player.get(num) != 0) {
+                answer = num;
+                break;
+            }
+        }
+        
+        return answer;
+    }
+}
