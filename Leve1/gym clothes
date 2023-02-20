@@ -1,0 +1,27 @@
+class Solution {
+    public int solution(int n, int[] lost, int[] reserve) {
+        int answer = n - lost.length;;
+        //중복찾기
+        for(int i=0; i<lost.length; i++) {
+            for (int j=0; j<reserve.length; j++){
+                if (lost[i] == reserve[j]) {
+                    reserve[j] = lost[i] = -1;
+                    answer++;
+                    break;
+                }
+            }
+        }
+        
+        //빌리기 가능한지 확인        
+        for (int i=0; i<lost.length; i++) {
+            for (int j=0; j<reserve.length; j++) {
+                if (lost[i]-1 == reserve [j] || lost[i]+1 == reserve[j]) {
+                    answer++;
+                    reserve[j] = -1;
+                    break;
+                }
+            }
+        }       
+        return answer;
+    }
+}
